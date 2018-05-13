@@ -10,7 +10,10 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -24,7 +27,7 @@ import java.util.Optional;
 @Transactional
 @ContextConfiguration(classes = {PersonRepositoryTest.JpaConfiure.class})
 public class PersonRepositoryTest {
-
+//the doc:https://docs.spring.io/spring-data/jpa/docs/2.1.0.M2/reference/html/#query-by-example
     @Autowired
     private  PersonRepository personRepository;
 
@@ -43,11 +46,38 @@ public class PersonRepositoryTest {
 
     }
 
+    @Test
+    public void pagationFindAllTest() {
+        //give
+        Person p1 = new Person();
+        p1.setLastName("Li");
+        p1.setFirstName("A1");
+        this.personRepository.save(p1);
+        Person p2 = new Person();
+        p2.setFirstName("Li");
+        p2.setFirstName("A2");
+        this.personRepository.save(p2);
+        Person p3 = new Person();
+        p3.setFirstName("Li");
+        p3.setLastName("A3");
+        this.personRepository.save(p3);
+        Person p4 = new Person();
+        p4.setLastName("A4");
+        p4.setFirstName("Li");
+        this.personRepository.save(p4);
+        //when
+        Page<Person> persons = this.personRepository.findAll(new PageRequest(1, 2));
+        //then
+        Assertions.assertThat(persons.getSize()).isEqualTo(2);
+
+    }
+
     @EnableJpaAuditing
     @Configuration
     @EnableAutoConfiguration
     @ComponentScan(basePackages = {"com.ay.sample"})
     @EntityScan(basePackages = "com.ay.sample")
+    @EnableJpaRepositories
     public  static class JpaConfiure{
 
     }

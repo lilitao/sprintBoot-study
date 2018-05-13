@@ -29,7 +29,7 @@ public class Person {
         this.firstName = firstName;
     }
 
-    @Column(name = "")
+    @Column(name = "lastName")
     public String getLastName() {
         return lastName;
     }
