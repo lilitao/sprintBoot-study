@@ -10,6 +10,7 @@
   <modules>
     <module>sample.springboot.application</module>
       <module>sample.springboot.testing</module>
+      <module>sample.springboot.jpa</module>
   </modules>
   <packaging>pom</packaging>
   <name>sample.springboot.parent</name>
