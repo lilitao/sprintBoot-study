@@ -7,10 +7,12 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Profile;
 
 import java.util.Arrays;
 
 @SpringBootApplication
+@Profile(value = "dev")
 public class AppStarter {
     private static Logger logger = LoggerFactory.getLogger(AppStarter.class);
     public static void main(String[] args) {

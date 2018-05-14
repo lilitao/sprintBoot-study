@@ -11,6 +11,7 @@
     <module>sample.springboot.application</module>
       <module>sample.springboot.testing</module>
       <module>sample.springboot.jpa</module>
+      <module>sample.springboot.properties</module>
   </modules>
   <packaging>pom</packaging>
   <name>sample.springboot.parent</name>
