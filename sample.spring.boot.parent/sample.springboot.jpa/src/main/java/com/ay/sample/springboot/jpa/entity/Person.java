@@ -20,7 +20,7 @@ public class Person {
     }
 
 
-    @Column(name = "firstName")
+    @Column(name = "firstName" )
     public String getFirstName() {
         return firstName;
     }
