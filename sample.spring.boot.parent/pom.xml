@@ -12,6 +12,7 @@
       <module>sample.springboot.testing</module>
       <module>sample.springboot.jpa</module>
       <module>sample.springboot.properties</module>
+      <module>sample.springboot.message</module>
   </modules>
   <packaging>pom</packaging>
   <name>sample.springboot.parent</name>
@@ -56,7 +57,6 @@
           <plugin>
               <groupId>org.liquibase</groupId>
               <artifactId>liquibase-maven-plugin</artifactId>
-              <version>3.0.5</version>
           </plugin>
           <plugin>
           <artifactId>maven-clean-plugin</artifactId>
