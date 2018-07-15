@@ -9,10 +9,10 @@ public class MessageFrom {
     private int id;
 
     @NotNull
-    @Length(max = 10,min = 5)
+    @Length(min = 5,max = 10,message = "exception.args.length.validate")
     private String firstName;
     @NotNull
-    @Length(max = 10,min = 5)
+    @Length(min = 5,max = 10,message = "exception.args.length.validate")
     private String lastName;
 
     public int getId() {

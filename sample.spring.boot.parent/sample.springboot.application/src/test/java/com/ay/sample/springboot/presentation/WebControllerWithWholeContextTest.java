@@ -1,5 +1,6 @@
 package com.ay.sample.springboot.presentation;
 
+import com.ay.sample.springboot.AppStarter;
 import org.hamcrest.Matchers;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -13,7 +14,7 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest//要求spring boot 启动了整个spring boot context上下文，包括了所有的配置 ,如果仅仅需要启动spring boot 中的web controller动的context,则使用 @WebMvcTest
+@SpringBootTest(classes = AppStarter.class)//要求spring boot 启动了整个spring boot context上下文，包括了所有的配置 ,如果仅仅需要启动spring boot 中的web controller动的context,则使用 @WebMvcTest
 @AutoConfigureMockMvc
 public class WebControllerWithWholeContextTest {
 

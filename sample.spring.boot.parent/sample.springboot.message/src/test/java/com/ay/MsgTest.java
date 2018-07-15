@@ -64,7 +64,7 @@ public class MsgTest {
         param.put("lastName", Arrays.asList("222222"));
         mockMvc.perform(MockMvcRequestBuilders.post(new URI("/message/getMessage")).params(param))
                 .andDo(MockMvcResultHandlers.print())
-                .andExpect(MockMvcResultMatchers.status().isOk());
+                .andExpect(MockMvcResultMatchers.status().is(400));
     }
 }
 

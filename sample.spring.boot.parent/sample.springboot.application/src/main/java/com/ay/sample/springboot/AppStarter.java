@@ -13,7 +13,7 @@ import org.springframework.context.annotation.PropertySource;
 
 import java.util.Arrays;
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = "com.ay.sample")
 //@Profile(value = "dev")
 //@PropertySource(value = "classpath:application.properties")
 public class AppStarter {
@@ -28,7 +28,7 @@ public class AppStarter {
 
             logger.info("a spring boot example staring");
             String[] beanNames = context.getBeanDefinitionNames();
-          //  Arrays.stream(beanNames).forEach(name -> logger.info(name));
+            Arrays.stream(beanNames).forEach(name -> logger.info(name));
         };
     }
 }

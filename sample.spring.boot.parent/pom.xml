@@ -13,6 +13,7 @@
       <module>sample.springboot.jpa</module>
       <module>sample.springboot.properties</module>
       <module>sample.springboot.message</module>
+      <module>sample.springboot.batch</module>
   </modules>
   <packaging>pom</packaging>
   <name>sample.springboot.parent</name>
